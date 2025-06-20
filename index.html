@@ -37,16 +37,44 @@
       padding: 1rem;
       height: 150%;
     }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 2rem;
+      border-radius: 4px;
+      max-width: 600px;
+      position: relative;
+    }
+    .close-modal {
+      position: absolute;
+      right: 1rem;
+      top: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h2>Save Hotwells Primary School</h2>
-    <p>Thanks for helping. Here's what you can do to make a difference:</p>
-    <a href="https://chng.it/q7kjcg4v5n" class="button button-large">Sign petition</a>
-    <p><em>Please give your thoguhts on the proposed merger/closure. Keep in mind that the merger would be better than just closing so our objection is to the way this is being done - we want to keep our kids together:</em></p>
-    <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScbDj7N3Ju8542rWETPNOM7OeYw5GUKd7E-y4zLlqmfjfmwhg/viewform" class="button">Feedback on Merger Consultation</a>
-    <a href="https://padlet.com/hotwells/save_hotwells_primary" class="button">Share your perspective with us</a>
+    <p>Thanks for helping. There are two big things you can do right now - sign the petition and give your feedback on the consultation.</p>
+    <a href="https://chng.it/q7kjcg4v5n" class="button button-large" target="_blank">Sign petition</a>
+    <button class="button button-large" id="consultation-btn">Feedback on Merger Consultation</button>
+    <p>To help us publicise this issue, please share your memories, thoughts and pictures of Hotwells and what we have to lose:</p>
+    <a href="https://padlet.com/hotwells/save_hotwells_primary" class="button" target="_blank">Share your perspective with us</a>
     <h3>Show your support at the public meeting</h3>
     <p>Tuesday, July 1, 2025, 7:00 PM – 9:00 PM<br />
     Location: Updatirs @ The Pumphouse, Hotwells</p>
@@ -86,5 +114,47 @@
     </ul>
     <p>Our children deserve more than a cost-cutting exercise - they deserve the proven, nurturing education that Hotwells provides.</p>
   </div>
+  <!-- Modal -->  
+  <div id="consultation-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Important Information Before Providing Feedback</h3>
+      <p><strong>The consultation runs until 7th July.</strong> Your feedback is your own, but here are some of the points many Hotwells parents feel strongly about:</p>
+      <ul style="text-align: left;">
+        <li>Consultation process has been inadequate.</li>
+        <li>The school should be kept open as numbers continue to improve, but the trust are acting as a business not trustees of a community resource.</li>
+        <li>Hotwells is different to CPS in ethos, uniform, and catchment.</li>
+        <li>We should maintain secular education options in the area.</li>
+      </ul>
+      <p>Your thoughtful response can make a difference in this important decision.</p>
+      <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScbDj7N3Ju8542rWETPNOM7OeYw5GUKd7E-y4zLlqmfjfmwhg/viewform" target="_blank">Proceed to Consultation Form</a>
+    </div>
+  </div>
+
+  <script>
+    // Modal functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('consultation-modal');
+      const btn = document.getElementById('consultation-btn');
+      const closeBtn = document.querySelector('.close-modal');
+      
+      // Open modal when button is clicked
+      btn.addEventListener('click', function() {
+        modal.style.display = 'block';
+      });
+      
+      // Close modal when X is clicked
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      // Close modal when clicking outside of it
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
