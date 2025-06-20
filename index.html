@@ -5,162 +5,601 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Save Hotwells Primary School</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      line-height: 1.6;
+    :root {
+      --primary-color: #0074e0;
+      --secondary-color: #00ccffcb;
+      --accent-color: #eeb200;
+      --text-color: #212529;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+      --border-radius: 0.375rem;
+      --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     }
-    p {
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f8f9fa;
       font-size: 18px;
     }
-    body {
-      align-items: center;
-      justify-content: center;
-      background-image: url("playground.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-    .container {
-      margin-top: 2rem;
-      width: 100%;
-      max-width: 700px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 4rem;
-    }
-    .button {
-      width: 100%;
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
       margin-bottom: 1rem;
     }
-    .button-large {
-      font-size: 1.25rem;
-      padding: 1rem;
-      height: 150%;
+    
+    p {
+      margin-bottom: 1rem;
     }
+    
+    .btn {
+      border-radius: var(--border-radius);
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    
+    .btn-secondary {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+    
+    .btn-outline-light {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .btn-outline-light:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url('https://savehotwellsprimary.org/playground.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 8rem 0;
+      margin-bottom: 0;
+      position: relative;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Share Banner */
+    .share-banner {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+      padding: 1.5rem 0;
+      position: relative;
+      z-index: 10;
+    }
+    
+    .share-banner h4 {
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    
+    .share-banner .btn-light {
+      font-weight: 500;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Summary Section */
+    .summary-section {
+      background-color: rgb(0, 147, 252);
+      color: white;
+      padding: 3rem 0;
+    }
+    
+    .meeting-card {
+      background-color: #0968dc;
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      backdrop-filter: blur(5px);
+    }
+    
+    /* Content Section */
+    .content-section {
+      padding: 4rem 0;
+    }
+    
+    .content-section h2 {
+      color: var(--primary-color);
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .content-section h3 {
+      margin-top: 1.5rem;
+    }
+    
+    .content-section p {
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Resource Cards */
+    .resource-card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--box-shadow);
+      margin-bottom: 2rem;
+    }
+    
+    .resource-card h3, .resource-card h4 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Fixed Share Button */
+    .share-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      box-shadow: var(--box-shadow);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+    
+    .share-btn:hover {
+      transform: scale(1.1);
+      background-color: #0056b3;
+    }
+    
+    /* QR Code Placeholder */
+    .qr-code-placeholder {
+      background-color: #f8f9fa;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      display: inline-block;
+    }
+    
+    /* Example Message */
+    .example-message {
+      background-color: #f8f9fa;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 6rem 0;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .content-section {
+        padding: 2rem 0;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero {
+        padding: 4rem 0;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .share-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+    }
+    
+    /* Modal styles */
+    .modal-content {
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+    
+    .modal-header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+    }
+    
+    .modal-body {
+      padding: 1.5rem;
+    }
+    
+    .modal-footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 1rem 1.5rem;
+    }
+    
+    /* Meeting Card */
+    .meeting-card {
+      border-left: 4px solid var(--primary-color);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .meeting-card h3 {
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    
+    /* Share Button */
+    .share-btn {
+      position: fixed;
+      right: 2rem;
+      bottom: 2rem;
+      background-color: var(--secondary-color);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+    
+    .share-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    
     /* Modal Styles */
     .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1050;
     }
+    
     .modal-content {
-      background-color: #fff;
-      margin: 15% auto;
-      padding: 2rem;
-      border-radius: 4px;
-      max-width: 800px;
-      position: relative;
-      font-size: 18px;
-      line-height: 1.6;
+      border-radius: 0.75rem;
+      border: none;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
     }
+    
+    .modal-header {
+      border-bottom: none;
+      padding: 1.5rem 1.5rem 0.5rem;
+    }
+    
+    .modal-body {
+      padding: 1.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .modal-footer {
+      border-top: none;
+      padding: 0.5rem 1.5rem 1.5rem;
+    }
+    
     .close-modal {
       position: absolute;
-      right: 1rem;
-      top: 0.5rem;
+      right: 1.5rem;
+      top: 1rem;
       font-size: 1.5rem;
-      font-weight: bold;
+      color: var(--gray-color);
+      background: none;
+      border: none;
       cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    
+    .close-modal:hover {
+      color: var(--dark-color);
+    }
+    
+    /* QR Code */
+    .qr-code {
+      max-width: 200px;
+      margin: 0 auto;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 6rem 0;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .content-section {
+        padding: 3rem 0;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Save Hotwells Primary School</h2>
-    <p>Thanks for helping. There are two big things you can do right now - sign the petition and give your feedback on the consultation.</p>
-    <a href="https://chng.it/q7kjcg4v5n" class="button button-large" target="_blank">Sign petition</a>
-    <button class="button button-large" id="consultation-btn">Feedback on Merger Consultation</button>
-    <p>To help us publicise this issue, please share your memories, thoughts and pictures of Hotwells and what we have to lose:</p>
-    <a href="https://padlet.com/hotwells/save_hotwells_primary" class="button" target="_blank">Share your perspective with us</a>
-    <h3>Show your support at the public meeting</h3>
-    <p>Tuesday, July 1, 2025, 7:00 PM – 9:00 PM<br />
-    Location: Updatirs @ The Pumphouse, Hotwells</p>
-    <a class="button" href="./meeting.ics" download="event.ics">Add to Outlook/Apple/iCal</a>
-    <a class="button" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Amazing+Event+Title&dates=20250701T180000Z/20250701T200000Z&details=Public+Meeting+-+Save+Hotwells+Primary+School!&location=Updatirs,+The+Pumphouse,+Hotwells" target="_blank">Add to Google Calendar</a>
-    <h2>More Information</h2>
-    <h2 id="the-issue">The Issue</h2>
-    <p>Cathedral Schools Trust claims Hotwells Primary is no longer viable and must either close or be merged into Cathedral Primary School (CPS) - taking on its name, uniform, and Church of England designation. They plan to have early years and key stage 1 on the former Hotwells site and key stage 2 at the current CPS site.</p>
-    <p>In reality, this is not a merger but a takeover that would end 100 years of Hotwells Primary as we know it. Two of the three objectives driving the consultation are not even related to Hotwells: getting more space for Cathedral Primary and helping Bristol reduce primary admission numbers across the city.</p>
-    <p>The Trust has failed to provide convincing evidence to justify such a drastic decision. Hotwells has had some difficult years with lower pupil numbers, but the Trust&#39;s claim that Hotwells is financially unviable is unconvincing. The situation is improving, despite the Trust having made little effort to support or invest in making the school sustainable. Many in the local area are unaware of the school, highlighting the lack of marketing in recent years, suggesting opportunity for greater numbers.</p>
-    <p>Hotwells is a high-performing, inclusive school that plays a vital role in the local community and provides the kind of nurturing environment that many children simply won&#39;t find elsewhere. Whether the current proposal is accepted or not, the Trust&#39;s intention remains: to shut down Hotwells. This move is not in the best interest of the children, families, or the wider community.</p>
-    <h2 id="what-we-stand-to-lose">What We Stand to Lose</h2>
-    <h3 id="a-high-achieving-supportive-community-driven-school">A High-Achieving, Supportive, Community-Driven School</h3>
-    <p>Hotwells provides a uniquely nurturing environment rooted in its small size, non-uniform, and inter-year support. Academically it exceeds the national SATS exceeds-expectations by 10-20% placing the school among <a href="https://www.bristolworld.com/education/14-top-bristol-primary-schools-progress-scores-ofsted-5125855?page=3">Bristol&#39;s top performers</a>.</p>
-    <p>Ofsted rated Hotwells &quot;Good&quot; in September 2022, praising its inclusive, nurturing ethos where &quot;pupils feel safe and well looked after&quot; and &quot;enjoy coming to school and take pride in their work&quot;. They also said that parental feedback was the most overwhelmingly positive they had ever seen, testament to the loyalty it inspires.</p>
-    <p>For many children, especially those who struggle in larger, more formal settings, Hotwells offers the individual attention and emotional safety they need to thrive. This kind of care and level of achievement is much harder to replicate in a larger school.</p>
-    <h3 id="loss-of-a-secular-choice">Loss of a Secular Choice</h3>
-    <p>Hotwells is the only non-religious school in the ward and many families chose it for exactly that reason. The proposed merger would impose a Church of England ethos, undermining the school&#39;s inclusive identity and alienating families who value secular education.</p>
-    <h3 id="deep-community-integration">Deep Community Integration</h3>
-    <p>Hotwells is a vital part of local life. From the West Bristol Arts Trail to the Hotwells Panto and the intergenerational lunch club, the school plays a key role in bringing people together across age and background. Losing it would mean severing these long-standing community ties.</p>
-    <h3 id="child-independence-and-local-connection">Child Independence and Local Connection</h3>
-    <p>Children walk to Hotwells. They visit friends, grow in confidence, and develop independence in a safe and familiar environment. Parents know each other, support one another, and build strong informal networks.</p>
-    <p>Whether the school is closed outright or merged into a split-site arrangement, many children will face longer journeys and risk being separated from their peers. Families who currently walk will be forced to drive, increasing traffic and congestion in the city centre at an already busy time, undermining Bristol&#39;s sustainable transport goals.  The close-knit, walkable community that Hotwells fosters will be lost.</p>
-    <h3 id="supporting-local-growth">Supporting Local Growth</h3>
-    <p>Many current pupils live in the local flats. Over 1,000 new homes are planned in the Harbourside area. Closing Hotwells now would leave this growing population underserved and force more families to travel further afield. Keeping Hotwells open is essential for future school place planning and a sustainable, walkable community. The merger does not guarantee the number of places reserved for the local community in the new school.</p>
-    <h2 id="issues-with-the-consultation-process">Issues with the Consultation Process</h2>
-    <p>The consultation process surrounding the proposed closure and merger of Hotwells Primary is deeply inadequate. With only five weeks of engagement, well short of best-practice standards and poorly- timed, the consultation has not allowed families or the wider community the time or clarity needed to respond meaningfully. Despite The Trust working on these plans for over two years, parents were given very limited notice, and key decisions appear to have been made in advance.</p>
-    <p>The Cathedral Schools Trust has made no effort to let the local community know about this change that will have an impact on the area. This lack of transparency and genuine engagement raises serious concerns about the integrity of the decision-making process.</p>
-    <p>The Trust have not published information about why alternatives were rejected and do not have financial modelling that a merged split-site school would be viable, nor the percentage of places that would be reserved for the local community. </p>
-    <h2 id="we-disagree-with-the-premise-of-the-consultation-that-hotwells-primary-must-close">We disagree with the premise of the consultation that Hotwells Primary must close</h2>
-    <p>We call on Cathedral Schools Trust, the Department for Education, and all decision-makers to protect this high-performing, community-first school. We demand the following:</p>
-    <ul>
-    <li>The current consultation must be withdrawn</li>
-    <li>No decision should be made until meaningful steps have been taken to support the school&#39;s sustainability in partnership with the community</li>
-    <li>Any plan should retain secular educational provisions onsite that serve the local community and keep the Hotwells identity</li>
-    <li>All current Hotwells pupils must have the option to continue their education together</li>
-    </ul>
-    <p>Our children deserve more than a cost-cutting exercise - they deserve the proven, nurturing education that Hotwells provides.</p>
-  </div>
-  <!-- Modal -->  
-  <div id="consultation-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h3>Important Information Before Providing Feedback</h3>
-      <p><strong>The consultation runs until 7th July.</strong> Your feedback is your own, but here are some of the points many Hotwells parents feel strongly about:</p>
-      <ul style="text-align: left;">
-        <li>Consultation process has been inadequate.</li>
-        <li>The school should be kept open as numbers continue to improve, but the trust are acting as a business not trustees of a community resource.</li>
-        <li>Hotwells is different to CPS in ethos, uniform, and catchment.</li>
-        <li>We should maintain secular education options in the area.</li>
-        <li>Current pupils should be able to continue their education together.</li>
-      </ul>
-      <p>Your thoughtful response can make a difference in this important decision.</p>
-      <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScbDj7N3Ju8542rWETPNOM7OeYw5GUKd7E-y4zLlqmfjfmwhg/viewform" target="_blank">Proceed to Consultation Form</a>
+  <!-- Share Button (Fixed) -->
+  <button class="share-btn" id="share-btn-fixed" type="button" data-bs-toggle="modal" data-bs-target="#shareModal">
+    <i class="fas fa-share-alt"></i>
+  </button>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Save Hotwells Primary School</h1>
+          <p>Help us preserve our high-achieving, supportive, community-driven school</p>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <a href="https://chng.it/q7kjcg4v5n" class="btn btn-secondary w-100" target="_blank">
+                <i class="fas fa-signature me-2"></i>Sign Petition
+              </a>
+            </div>
+            <div class="col-md-6 mb-3">
+              <button class="btn btn-primary w-100" id="consultation-btn">
+                <i class="fas fa-comment-dots me-2"></i>Feedback on Merger
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#shareModal">
+            <i class="fas fa-share-alt me-2"></i>Share This Campaign
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary Section -->
+  <section class="summary-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <h2>The Future of Hotwells Primary is at Risk</h2>
+          <p>Cathedral Schools Trust claims Hotwells Primary is no longer viable and must either close or be merged into Cathedral Primary School. This would end 100 years of Hotwells Primary as we know it, removing a vital secular education option from our community.</p>
+          
+          <div class="meeting-card mt-4">
+            <h3><i class="far fa-calendar-alt me-2"></i>Public Meeting - Show Your Support</h3>
+            <p class="mb-3">Tuesday, July 1, 2025, 7:00 PM – 9:00 PM<br>Location: Upstairs @ The Pumphouse, Hotwells</p>
+            <div class="row">
+              <div class="col-md-6 mb-2">
+                <a class="btn btn-outline-light w-100" href="./meeting.ics" download="event.ics">
+                  <i class="far fa-calendar me-2"></i>Add to Outlook/Apple Calendar
+                </a>
+              </div>
+              <div class="col-md-6 mb-2">
+                <a class="btn btn-outline-light w-100" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Save+Hotwells+Primary+School+Meeting&dates=20250701T180000Z/20250701T200000Z&details=Public+Meeting+-+Save+Hotwells+Primary+School!&location=Upstairs,+The+Pumphouse,+Hotwells" target="_blank">
+                  <i class="fab fa-google me-2"></i>Add to Google Calendar
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Main Content Section with Two Columns -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row">
+        <!-- Left Column: Information about the situation -->
+        <div class="col-lg-7 order-lg-1 order-2">
+          <h2 id="the-issue">The Issue</h2>
+          <p>Cathedral Schools Trust claims Hotwells Primary is no longer viable and must either close or be merged into Cathedral Primary School (CPS) - taking on its name, uniform, and Church of England designation. They plan to have early years and key stage 1 on the former Hotwells site and key stage 2 at the current CPS site.</p>
+          
+          <p>In reality, this is not a merger but a takeover that would end 100 years of Hotwells Primary as we know it. Two of the three objectives driving the consultation are not even related to Hotwells: getting more space for Cathedral Primary and helping Bristol reduce primary admission numbers across the city.</p>
+          
+          <p>The Trust has failed to provide convincing evidence to justify such a drastic decision. Hotwells has had some difficult years with lower pupil numbers, but the Trust's claim that Hotwells is financially unviable is unconvincing. The situation is improving, despite the Trust having made little effort to support or invest in making the school sustainable.</p>
+          
+          <h2 id="what-we-stand-to-lose">What We Stand to Lose</h2>
+          
+          <h3>A High-Achieving, Supportive School</h3>
+          <p>Hotwells provides a uniquely nurturing environment rooted in its small size, non-uniform, and inter-year support. Academically it exceeds the national SATS exceeds-expectations by 10-20% placing the school among <a href="https://www.bristolworld.com/education/14-top-bristol-primary-schools-progress-scores-ofsted-5125855?page=3">Bristol's top performers</a>.</p>
+          
+          <p>Ofsted rated Hotwells "Good" in September 2022, praising its inclusive, nurturing ethos where "pupils feel safe and well looked after" and "enjoy coming to school and take pride in their work".</p>
+          
+          <h3>Loss of a Secular Choice</h3>
+          <p>Hotwells is the only non-religious school in the ward and many families chose it for exactly that reason. The proposed merger would impose a Church of England ethos, undermining the school's inclusive identity and alienating families who value secular education.</p>
+          
+          <h2 id="issues-with-the-consultation-process">Issues with the Consultation Process</h2>
+          <p>The consultation process surrounding the proposed closure and merger of Hotwells Primary is deeply inadequate. With only five weeks of engagement, well short of best-practice standards and poorly-timed, the consultation has not allowed families or the wider community the time or clarity needed to respond meaningfully.</p>
+          
+          <p>Despite The Trust working on these plans for over two years, parents were given very limited notice, and key decisions appear to have been made in advance.</p>
+          
+          <h2>Our Position</h2>
+          <p>We call on Cathedral Schools Trust, the Department for Education, and all decision-makers to protect this high-performing, community-first school. We demand the following:</p>
+          
+          <ul>
+            <li>The current consultation must be withdrawn</li>
+            <li>No decision should be made until meaningful steps have been taken to support the school's sustainability in partnership with the community</li>
+            <li>Any plan should retain secular educational provisions onsite that serve the local community and keep the Hotwells identity</li>
+            <li>All current Hotwells pupils must have the option to continue their education together</li>
+          </ul>
+          
+          <p>Our children deserve more than a cost-cutting exercise - they deserve the proven, nurturing education that Hotwells provides.</p>
+        </div>
+        
+        <!-- Right Column: Community impact, resources, and publicity -->
+        <div class="col-lg-5 order-lg-2 order-1 mb-5 mb-lg-0">
+          <div class="resource-card">
+            <h3>Community Impact</h3>
+            <p>Hotwells is a vital part of local life. From the West Bristol Arts Trail to the Hotwells Panto and the intergenerational lunch club, the school plays a key role in bringing people together across age and background.</p>
+            
+            <p>Children walk to Hotwells. They visit friends, grow in confidence, and develop independence in a safe and familiar environment. Parents know each other, support one another, and build strong informal networks.</p>
+            
+            <p>Over 1,000 new homes are planned in the Harbourside area. Closing Hotwells now would leave this growing population underserved and force more families to travel further afield.</p>
+            
+            <a href="https://padlet.com/hotwells/save_hotwells_primary" class="btn btn-primary w-100 mb-4" target="_blank">
+              <i class="fas fa-camera me-2"></i>Share Your Memories & Photos
+            </a>
+          </div>
+          
+          <div class="resource-card">
+            <h4>Resources</h4>
+            <div class="d-grid gap-3">
+              <a href="./resources/save-hotwells-poster.jpg" class="btn btn-outline-primary" download>
+                <i class="fas fa-file-pdf me-2"></i>Download Printable Poster
+              </a>
+              <a href="./resources/save-hotwells-flyer.pdf" class="btn btn-outline-primary" download>
+                <i class="fas fa-image me-2"></i>Download Digital Flyer
+              </a>
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#shareModal">
+                <i class="fas fa-share-alt me-2"></i>Share This Campaign
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Consultation Modal -->  
+  <div class="modal fade" id="consultation-modal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="consultationModalLabel">Before you give feedback on the consultation</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Thank you for taking the time to respond to the consultation. Your feedback is crucial in this process.</p>
+          <p>To help ensure your feedback is as effective as possible, please consider the following points:</p>
+          <ol>
+            <li>The consultation is asking for feedback on a specific proposal: the merger of Hotwells Primary School with Cathedral Primary School. It's important to address this directly.</li>
+            <li>Be clear about whether you support or oppose the proposal, and why.</li>
+            <li>Personal experiences and connections to the school are valuable - share how the proposal would impact you, your family, or the community.</li>
+            <li>Consider addressing specific aspects of the proposal, such as:
+              <ul>
+                <li>The impact on educational choice in the area (particularly the loss of a secular option)</li>
+                <li>The effect on the local community and its walkability</li>
+                <li>The adequacy of the consultation process itself</li>
+                <li>The financial arguments being made</li>
+                <li>Alternative solutions that could be explored</li>
+              </ul>
+            </li>
+            <li>Be respectful but firm in your response.</li>
+          </ol>
+          <p>Remember, this consultation is our opportunity to make our voices heard. Thank you for standing with our school community.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=ViObpySMIkm0IMbibQtAkWP6HtCRZpBMuWWK9WE3aEhUMlJTTjdDRDVLRDdTVDVTMUdFRTFVVFNLVS4u" class="btn btn-primary" target="_blank">Proceed to Consultation Form</a>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Share Modal -->
+  <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="shareModalLabel">Share This Campaign</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mb-4">
+            <!-- QR Code placeholder - would be generated dynamically -->
+            <div class="qr-code-placeholder mb-2">
+              <i class="fas fa-qrcode fa-5x"></i>
+              <p class="small text-muted mt-1">Scan to visit this page</p>
+            </div>
+          </div>
+          
+          <h5>Share via Social Media</h5>
+          <div class="d-flex justify-content-center gap-3 mb-4">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://savehotwellsprimary.org" target="_blank" class="btn btn-outline-primary">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Help%20save%20Hotwells%20Primary%20School%20from%20closure!&url=https://savehotwellsprimary.org" target="_blank" class="btn btn-outline-primary">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:?subject=Help%20Save%20Hotwells%20Primary%20School&body=Please%20help%20us%20save%20Hotwells%20Primary%20School%20from%20closure.%20Visit%20https://savehotwellsprimary.org%20for%20more%20information." class="btn btn-outline-primary">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/?text=Help%20save%20Hotwells%20Primary%20School%20from%20closure!%20https://savehotwellsprimary.org" target="_blank" class="btn btn-outline-primary">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+          
+          <h5>Copy Link</h5>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" value="https://savehotwellsprimary.org" id="share-url" readonly>
+            <button class="btn btn-outline-secondary" type="button" onclick="copyShareLink()">Copy</button>
+          </div>
+          
+          <h5>Example Message</h5>
+          <div class="example-message p-3 border rounded">
+            <p class="mb-0">Hotwells Primary School is at risk of closure. This would mean the loss of a vital secular education option and community hub in our area. Please help by signing the petition and responding to the consultation: https://savehotwellsprimary.org</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
   <script>
-    // Modal functionality
+    // Function to copy the share link to clipboard
+    function copyShareLink() {
+      const shareUrl = document.getElementById('share-url');
+      shareUrl.select();
+      shareUrl.setSelectionRange(0, 99999); // For mobile devices
+      navigator.clipboard.writeText(shareUrl.value);
+      
+      // Show feedback (could be enhanced with a toast notification)
+      const copyButton = shareUrl.nextElementSibling;
+      const originalText = copyButton.textContent;
+      copyButton.textContent = 'Copied!';
+      setTimeout(() => {
+        copyButton.textContent = originalText;
+      }, 2000);
+    }
+    
+    // Initialize Bootstrap tooltips
     document.addEventListener('DOMContentLoaded', function() {
-      const modal = document.getElementById('consultation-modal');
-      const btn = document.getElementById('consultation-btn');
-      const closeBtn = document.querySelector('.close-modal');
-      
-      // Open modal when button is clicked
-      btn.addEventListener('click', function() {
-        modal.style.display = 'block';
-      });
-      
-      // Close modal when X is clicked
-      closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-      });
-      
-      // Close modal when clicking outside of it
-      window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
+      // Update consultation button to use Bootstrap modal
+      document.getElementById('consultation-btn').setAttribute('data-bs-toggle', 'modal');
+      document.getElementById('consultation-btn').setAttribute('data-bs-target', '#consultation-modal');
     });
   </script>
 </body>
